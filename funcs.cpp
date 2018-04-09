@@ -24,9 +24,12 @@ int countChar(std::string line, char c){
 }
 
 std::string braceTabber(std::string line, int *braces){
+
+  *braces+=countChar(line,'}'); //fixed
+
 	line.insert(0,*braces,'\t');
 
-	*braces+=countChar(line,'{')-countChar(line,'}');
-
+	*braces+=countChar(line,'{');
+	
 	return line;
 }

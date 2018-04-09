@@ -1,1 +1,3 @@
 # part2
+Commenting by Thomas Westfall
+The code compiles, and the code works as intended. As for the functions, for the helper function removeLeadingSpaces, he used built-in functions erase and isspace, which made the code cleaner than by doing it another way. Countchar uses a foreach loop which is cleaner than using another loop. Bracetabber works as intended, which is efficient through the use of insert. A line was added to avoid an error within the function, though. There was a side effect, however, that made the main give no output, which I failed to figure out why.
