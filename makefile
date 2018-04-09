@@ -10,13 +10,24 @@ main.o: main.cpp funcs.h
 funcs.o: funcs.cpp funcs.h
 		g++ $(CXXFLAGS) -c funcs.cpp
 clean:
-		rm -f main.o funcs.o tests.o
+		rm -f main.o funcs.o tests.o debug.o debugfuncs.o
 
 
 tests: tests.o funcs.o
 		g++ -o tests tests.o funcs.o
 
 tests.o: tests.cpp funcs.h
+
+
+debug: debug.o funcs.o
+		g++ -o main main.o funcs.o
+
+debug.o: main.cpp funcs.h
+		g++ $(CXXFLAGS) -g -c main.cpp
+
+debugfuncs.o: funcs.cpp funcs.h
+		g++ $(CXXFLAGS) -g -c funcs.cpp
+
 
 
 clang: mainclang.o funcsclang.o
